@@ -42,7 +42,7 @@ async def create_qr_code(request: QRCodeRequest, token: str = Depends(oauth2_sch
         logging.info("QR code already exists.")
         # If it exists, return a conflict response
         return JSONResponse(
-            status_code=status.HTTP_209_CONFLICT,
+            status_code=status.HTTP_409_CONFLICT,
             content={"message": "QR code already exists.", "links": links}
         )
 
@@ -66,7 +66,7 @@ async def list_qr_codes_endpoint(token: str = Depends(oauth2_scheme)):
     ) for qr_file in qr_files]
     return responses
 
-@router.delete("/qr-codes/{qr_fileame}", status_code=status.HTTP_204_NO_CONTENT, tags=["QR Codes"])
+@router.delete("/qr-codes/{qr_filename}", status_code=status.HTTP_204_NO_CONTENT, tags=["QR Codes"])
 async def delete_qr_code_endpoint(qr_filename: str, token: str = Depends(oauth2_scheme)):
     logging.info(f"Deleting QR code: {qr_filename}.")
     qr_code_path = QR_DIRECTORY / qr_filename
