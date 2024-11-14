@@ -71,7 +71,7 @@ jobs:
           exit-code: '1' # Fail the job if vulnerabilities are found
           ignore-unfixed: true
           severity: 'CRITICAL,HIGH'
-          
+
       - name: Run Trivy
-        run: trivy image --skip-update ***/fastapi:8b7345b0302bfe1bfd1462f62855569c8b703d53
+        run: trivy image --skip-db-update
         
