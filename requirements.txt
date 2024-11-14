@@ -6,10 +6,12 @@ certifi==2024.2.2
 cffi==1.16.0
 click==8.1.7
 cryptography==42.0.5
+distlib==0.3.8
 ecdsa==0.18.0
 exceptiongroup==1.2.0
-fastapi==0.110.0
-gunicorn==21.2.0
+fastapi==0.115.4
+filelock==3.16.0
+gunicorn==22.0.0
 h11==0.14.0
 httpcore==1.0.5
 httpx==0.27.0
@@ -17,6 +19,8 @@ idna==3.6
 iniconfig==2.0.0
 packaging==24.0
 passlib==1.7.4
+pillow==10.2.0
+platformdirs==4.3.3
 pluggy==1.4.0
 pyasn1==0.6.0
 pycparser==2.22
@@ -33,8 +37,9 @@ qrcode==7.4.2
 rsa==4.9
 six==1.16.0
 sniffio==1.3.1
-starlette==0.36.3
+starlette==0.41.2
 tomli==2.0.1
 typing_extensions==4.10.0
 uvicorn==0.29.0
 validators==0.24.0
+virtualenv==20.26.4
